@@ -4,6 +4,7 @@ It supports basic arithmetic operations: addition, subtraction, multiplication,
 and division, with error handling for invalid inputs and zero division.
 """
 
+
 def calculator():
     """
     Runs an infinite loop to accept user input for mathematical operations.
@@ -41,6 +42,7 @@ def calculator():
                 print("Invalid input! Please enter numeric values.")
         else:
             print("Invalid operator! Please use +, -, *, or /.")
+
 
 if __name__ == "__main__":
     calculator()
