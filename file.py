@@ -1,11 +1,20 @@
+"""
+This module provides a simple command-line calculator.
+It supports basic arithmetic operations: addition, subtraction, multiplication,
+and division, with error handling for invalid inputs and zero division.
+"""
+
 def calculator():
+    """
+    Runs an infinite loop to accept user input for mathematical operations.
+    The loop breaks when the user enters 'q'.
+    """
     print("--- Simple Python Calculator ---")
     print("Select operation: +, -, *, /")
     print("Enter 'q' to quit")
 
     while True:
-        # Get user input for the operation
-        choice = input("\nEnter operator (+, -, *, /) or 'q': ").lower()
+        choice = input("\nEnter operator (+, -, *, /) or 'q': ").lower().strip()
 
         if choice == 'q':
             print("Exiting... goodbye!")
@@ -13,11 +22,9 @@ def calculator():
 
         if choice in ('+', '-', '*', '/'):
             try:
-                # Get the numbers
                 num1 = float(input("Enter first number: "))
                 num2 = float(input("Enter second number: "))
 
-                # Perform the math
                 if choice == '+':
                     print(f"Result: {num1 + num2}")
                 elif choice == '-':
@@ -29,7 +36,7 @@ def calculator():
                         print("Error! Division by zero is not allowed.")
                     else:
                         print(f"Result: {num1 / num2}")
-            
+
             except ValueError:
                 print("Invalid input! Please enter numeric values.")
         else:
